@@ -54,6 +54,7 @@ body {
     display: grid;
     place-content: center;
     transition: transform 1s ease;
+    cursor: pointer;
 }
 
 .form-control.expanded button {

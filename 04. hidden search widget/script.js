@@ -12,6 +12,7 @@ function addHandlerToExpandInput() {
                 formControl.classList.remove('expanded')
             } else {
                 formControl.classList.add('expanded')
+                formControl.querySelector('input').focus()
             }
         })
     }
