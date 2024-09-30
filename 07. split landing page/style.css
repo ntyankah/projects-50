@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.content {
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+
+
+
+.ps-5, .xbox {
+    position: relative;
+    width: 50%;
+    transition: width 1s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    color: white;
+    font-size: 70px;
+}
+
+.ps-5 {
+    background-image: url('https://images.unsplash.com/photo-1617864064479-f203fc7897c0?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cGxheXN0YXRpb24lMjA1fGVufDB8fDB8fHww');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.ps-5 h3, .ps-5 button, .xbox h3, .xbox button {
+    z-index: 2;
+}
+
+.ps-5 button, .xbox button {
+    background-color: transparent;
+    color: white;
+    border: 5px solid white;
+    padding: 30px 80px;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.ps-5 button:hover, .ps-5 button:focus {
+    background-color: rgb(77, 74, 233, 0.5);
+}
+
+.ps-5::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgb(118, 116, 233, 0.8);
+}
+
+.xbox {
+    background-image: url('https://images.unsplash.com/photo-1621259182978-fbf93132d53d?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHhib3glMjBjb25zb2xlfGVufDB8fDB8fHww');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.xbox button:hover, .xbox button:focus {
+    background-color: rgb(26, 111, 26);
+}
+
+.xbox::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgb(38, 38, 38, 0.5);
+}
+
+.content.hover-left .ps-5 {
+    width: 70%;
+}
+
+.content.hover-right .xbox {
+    width: 70%;
+}
