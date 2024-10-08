@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary-color: black;
+    --primary-background: white;
+}
+
+body {
+    padding: 50px;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    background-color: var(--primary-background);
+    transition: all 1s;
+}
+
+body.dark {
+    --primary-color: white;
+    --primary-background: black;
+}
+
+.toggle-btn {
+    color: var(--primary-background);
+    background-color: var(--primary-color);
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.clock-holder {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.clock {
+    position: relative;
+    height: 200px;
+    width: 200px;
+    background-color: aqua;
+    position: relative;
+    border-radius: 50%;
+
+    &::before {
+        position: absolute;
+        content: '';
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        left: 50%;
+        top: 50%;
+        translate: -50% -50%;
+        background-color: red;
+    }
+
+    &::after {
+        position: absolute;
+        content: '';
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        left: 50%;
+        top: 50%;
+        translate: -50% -50%;
+        background-color: var(--primary-color);
+    }
+
+    .hand {
+        position: absolute;
+        display: inline-block;
+        width: 3px;
+        translate: -50% -100%;
+        transform-origin: bottom center;
+        
+    }
+    
+    .hour-hand {
+        height: 60px;
+        background-color: var(--primary-color);
+        left: 50%;
+        top: 50%;
+        transition: .5s;
+        
+    }
+
+    .minute-hand {
+        height: 90px;
+        background-color: var(--primary-color);
+        left: 50%;
+        top: 50%;
+        transition: .5s;
+    }
+
+    .seconds-hand {
+        height: 90px;
+        background-color: red;
+        left: 50%;
+        top: 50%;
+        transition: .5s;
+    }
+    
+}
+
+
+.date-time {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+    color: var(--primary-color);
+    .current-time {
+        font-size: 50px;
+    }
+
+    .current-date {
+        font-weight: 300;
+        .current-day {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--primary-color);
+            color: var(--primary-background);
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+        }
+    }
+}
